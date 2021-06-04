@@ -1,0 +1,53 @@
+[
+    {
+    "sushi": 
+    [{"name": "avocado maki", "price": 12},
+    {"name": "cucumber maki", "price": 11},
+    {"name": "tuna maki", "price": 14},
+    {"name": "california maki", "price": 18},
+    {"name": "tamago maki", "price": 16},
+    {"name": "futomaki" , "price": 11},
+    {"name": "takuan maki" , "price": 9},
+    {"name": "shitake maki" , "price": 14},
+    {"name": "asparagus maki" , "price": 14},
+    {"name": "octopus nigiri" , "price": 11},
+    {"name": "squid nigiri" , "price": 9},
+    {"name": "shrimp nigiri" , "price": 13}]
+    },
+
+    {
+       "noodles": 
+       [{"name": "beef noodles", "price": 19},
+       {"name": "chicken noodles", "price": 16}]
+    },
+
+    {
+        "menus":
+        [{"name": "beef teriyaki", "price": 21},
+        {"name": "curry pork", "price": 20},
+        {"name": "yakiudon", "price": 25},
+        {"name": "tofu steak", "price": 23},
+        {"name": "truffle sea bass", "price": 33},
+        {"name": "salmon teriyaki", "price": 35},
+        {"name": "chicken katsu", "price": 22},
+        {"name": "curry shrimp", "price": 30},
+        {"name": "yasai itame", "price": 20}]
+    },
+
+    {
+        "desserts":
+        [{"name": "chocolate mousse", "price": 16},
+        {"name": "fortune cookie", "price": 2},
+        {"name": "mochi", "price": 8}]
+    },
+
+    {
+        "drinks":
+        [{"name": "still water", "price": 3},
+        {"name": "sparkly water", "price": 3},
+        {"name": "coca cola", "price": 5},
+        {"name": "sprite", "price": 5},
+        {"name": "fanta", "price": 3}]
+
+    }
+]

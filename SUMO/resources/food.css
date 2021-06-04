@@ -1,0 +1,385 @@
+@font-face {
+  src: url(fonts/Moyko.ttf);
+  font-family: Moyko;
+}
+
+@font-face {
+  src: url(fonts/KelsonSansBG-Normal.ttf);
+  font-family: Kelson;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  /* letter-spacing: 0.05em; */
+  font-size: 16px;
+}
+
+html {
+  background-image: url("background_image.jpg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  scroll-behavior: smooth; /* pentru link-urile din meniu */
+}
+
+
+/* -- PARTEA DE MENIU --- */
+.menu_wrapper {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 500000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 90%;
+  background-color: rgb(250, 250, 250);
+  border-bottom: 2px solid #86cd99; /* duck egg */
+
+
+}
+
+nav .logo {
+  display: inline-block;
+  margin: 0px 10px 0px 20px;
+  font-family: Moyko, monospace;
+  font-size: 1.8rem;
+  margin-left: 4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.navbar-links ul{
+  display: flex;
+}
+
+.navbar-links li{
+  list-style: none;
+}
+
+.navbar-links li a{
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 2rem;
+}
+
+
+.toggle-button{
+  position: absolute;
+  display: none;
+  top: 1.25rem;
+  right: 3.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 21px;
+  width: 21px;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.underline_effect{
+  display: inline-block;
+  position: relative;
+}
+
+.underline_effect::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #bcbcbc;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  /*sursa efect: https://www.youtube.com/watch?v=5PzWwyVB2-c*/
+
+}
+
+.underline_effect:hover::before{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* -- PARTEA DE MENIU --- */
+
+.container {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  top:60px;
+}
+
+.wrapper {
+  display: flex;
+  position: fixed;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background: rgb(250, 250, 250);
+  width: 90%;
+  height: 100%;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, .10);
+
+}
+
+.food_menu {
+  height: 100%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  border: 2px solid grey;
+  width: 84%;
+  margin-left: 15%;
+  margin-right: 2%;
+  padding: 2rem 2rem 2rem 2rem;
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+ 
+}
+
+.Imagine{
+  position: relative;
+  background-image: url("food/avocado maki.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Umbra{
+  display: flex;
+  flex-flow: column;
+  justify-content:flex-start;
+  align-items: center;
+
+}
+
+.Titlu{
+  color: orange;
+  margin: 10%;
+  font-size: 1.7rem;
+}
+
+.Titlu::after{
+
+  content: '';
+  position: absolute;
+
+  width: 60%;
+  height: 2px;
+  top: 50%;
+  left: 20%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 500;
+  
+}
+
+.Buton_cumpara{
+  margin-top: auto;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 10%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  
+  
+  
+}
+
+.menu_buttons{
+  position: fixed;
+  top: 25%;
+  left: 2.5%;
+  background-color: rgb(251, 198, 198);
+  height: 38%;
+  width: 15%;
+  z-index: 500;
+}
+
+.menu_buttons ul{
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.menu_buttons li{
+  display: inline-block;
+  padding-left: 8%;
+  height: 30%;
+  padding-top:1.5%;
+  padding-bottom:1.5%;
+  margin-top: 7%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+
+}
+
+.menu_buttons ul li:last-child{
+  margin-bottom: 10%;
+
+}
+
+.menu_buttons ul li:first-child{
+  display: block;
+  width: 100%;
+  padding-bottom: 2%;
+  margin-top: 5%;
+  padding-left: 0;
+  align-self: center;
+  font-size: 1.25rem;
+  border-bottom: 3px solid white;
+
+}
+
+.menu_buttons ul li:first-child ~ li:hover{
+  background-color: white;
+  display: block;
+  width: 100%;
+  color: rgb(251, 198, 198);
+
+}
+
+.reducere{
+  position: absolute;
+  z-index: 50;
+  top: 50%;
+  left: 8%;
+  padding: .25rem .25rem .25rem .25rem;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  border-radius: 30%;
+
+}
+
+@media (max-width: 1000px){
+
+  nav .logo{
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 768px){
+    .toggle-button{
+      display: flex;
+    }
+
+    .navbar-links{
+      display: none;
+      width: 100%;
+    }
+     .navbar-links ul{
+       width: 100%;
+     }
+    .navbar{
+      flex-direction: column;
+    }
+
+    .logo{
+      margin-top: 15px !important;
+    }
+
+    .navbar-links ul{
+      flex-direction: column;
+      background-color: #86cd99;
+      margin-top: 10px;
+      align-items: center;
+
+    }
+
+    .navbar-links li{
+      text-align: center;
+      width: 100%;
+    }
+
+    .navbar-links li:hover{
+      background-color: rgb(250, 250, 250);
+    }
+
+    .navbar-links li a{
+      margin: 0.8rem 1rem;
+    }
+
+  .navbar-links li:first-of-type{
+        margin-top: 1rem;
+      }
+
+    .navbar-links li:last-of-type {
+      margin-bottom: 2rem;
+    }
+
+    .navbar-links.active{
+       display: flex;
+     }
+
+
+    a.underline_effect, a.underline_effect::before, a.underline_effect:hover::before{
+      display: none;
+    }
+
+.menu_buttons{
+  width: 25%;
+}
+
+.food_menu {
+  width: 72%;
+  margin-left: 25%;
+  margin-top: 9%;
+  margin-bottom: 10%;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.Titlu{
+  font-size: 1.4rem;
+}
+
+}
+
+@media (max-width: 500px){
+  *{font-size: 14px;}
+
+  .menu_buttons{
+    width: 28%;
+  }
+
+  .food_menu {
+    margin-top:10%;
+    height: 200%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
