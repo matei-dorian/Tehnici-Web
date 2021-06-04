@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* letter-spacing: 0.05em; */
+  }
+
+
+html {
+    background-image: url("background_image.jpg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    scroll-behavior: smooth; /* pentru link-urile din meniu */
+  }
+
+.list{
+    position: absolute;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    display: flex;
+    margin-top: 5rem;
+    align-content: center;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+    background-color: rgb(195, 224, 221);
+    height:70%;
+    width:90%;
+
+    top: 0.5%;
+    left: 3%;
+}
+
+.butoane{
+    
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    bottom: 8%;
+    left: 3%;
+    width: 90%;
+}
+
+button{
+   /* padding: 0.5rem 0.5rem 0.5rem 0.5rem;*/
+    width: 10rem;
+    height: 3.5rem;
+    background-color: rgba(251, 198, 198, 0.9);
+    border-color: whitesmoke;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+header{
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    background-color: rgba(251, 198, 198, 0.9);
+    height: 5rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+h1{
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.info{
+    
+    display: flex;
+    flex-flow: column;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    align-items: flex-start;
+    width: 40%;
+    height: 98%;
+    min-width: 500px;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    cursor:pointer;
+    color:#666666;
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+  }
+
+  .info div{
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h2{
+    margin-top: auto;
+    margin-bottom: 1rem;
+}  

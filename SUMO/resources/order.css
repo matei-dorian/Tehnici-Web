@@ -1,0 +1,444 @@
+@font-face {
+    src: url(fonts/Moyko.ttf);
+    font-family: Moyko;
+  }
+  
+  @font-face {
+    src: url(fonts/KelsonSansBG-Normal.ttf);
+    font-family: Kelson;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    /* letter-spacing: 0.05em; */
+    font-size: 16px;
+  }
+  
+  html {
+    background-image: url("background_image.jpg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    scroll-behavior: smooth; /* pentru link-urile din meniu */
+  }
+  
+  
+  /* -- PARTEA DE MENIU --- */
+  .menu_wrapper {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 500000;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 90%;
+    background-color: rgb(250, 250, 250);
+    border-bottom: 2px solid #86cd99; /* duck egg */
+  
+  
+  }
+  
+  nav .logo {
+    display: inline-block;
+    margin: 0px 10px 0px 20px;
+    font-family: Moyko, monospace;
+    font-size: 1.8rem;
+    margin-left: 4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  
+  .navbar-links ul{
+    display: flex;
+  }
+  
+  .navbar-links li{
+    list-style: none;
+  }
+  
+  .navbar-links li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin: 2rem;
+  }
+  
+  
+  .toggle-button{
+    position: absolute;
+    display: none;
+    top: 1.25rem;
+    right: 3.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    width: 21px;
+  }
+  
+  .toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+  }
+  
+  .underline_effect{
+    display: inline-block;
+    position: relative;
+  }
+  
+  .underline_effect::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #bcbcbc;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    /*sursa efect: https://www.youtube.com/watch?v=5PzWwyVB2-c*/
+  
+  }
+  
+  .underline_effect:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  /* -- PARTEA DE MENIU --- */
+  
+  .container {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    top:60px;
+  }
+  
+  .wrapper {
+    display: flex;
+    position: fixed;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background: rgb(250, 250, 250);
+    width: 90%;
+    height: 100%;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, .10);
+  
+  }
+
+
+  .list{
+      position: relative;
+      overflow-y: scroll;
+      flex-wrap: wrap;
+      display: flex;
+      margin-top: 5rem;
+      align-content: center;
+      background-color: rgb(195, 224, 221);
+      height:70%;
+      width:90%;
+  }
+
+  .mancare{
+    
+      display: flex;
+      padding-left: 2rem;
+      align-items: center;
+      width: 100%;
+      height: 15%;
+
+      box-shadow:inset 0px 1px 0px 0px #ffffff;
+	  background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	  background-color:#ffffff;
+	  border-radius:6px;
+	  border:1px solid #dcdcdc;
+	  cursor:pointer;
+	  color:#666666;
+      margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+    }
+  
+  .mancare *{
+      font-size: 1.1rem;
+      display: inline;
+      margin-left: auto;
+      margin-right:auto;
+  }
+
+  .mancare:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+
+  .numar{
+     
+      margin-left: 0;
+      margin-right: 0;
+      left: 0px;
+  }
+
+  .minus{
+        height: 1.2rem;
+        width: 1.2rem;
+        text-align: center;
+        padding-bottom: 16px;
+        background-color: lightcoral;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 0px;
+        font-size: 1rem;
+
+        box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	    background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+	    background-color:#fc8d83;
+	    border-radius:6px;
+	    border:1px solid #d83526;
+  }
+
+  .nume{
+      display: block;
+      text-align: left;
+      width: 25%;
+      text-decoration: underline;
+      margin-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .plus{
+    height: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
+    padding-bottom: 18px;
+    padding-right: 1px;
+    margin-right: 10%;
+    background-color: lightgreen;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 0px;
+    font-size: 1rem;
+
+    box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+
+  }
+
+  .minus:active, .plus:active {
+	position:relative;
+	top:1px;
+}
+
+.plus:hover {
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+
+.minus:hover {
+	background:linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+	background-color:#e4685d;
+}
+
+  .cantitate{
+      background-color: white;
+      padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+  }
+
+  .mesaj{
+      display: inline-block;
+      margin: auto auto auto auto;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      /*margin-top: 20%;*/
+  }
+
+  .mesaj a{
+    display: inline-block;
+    color: white;
+    font-size: 2.9rem;
+    font-weight: bold;
+  }
+
+  .mesaj a:hover{
+      color: #007dc1;
+  }
+
+  .total{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: pink;
+    width: 90%;
+    height: 2.5rem;
+}
+
+.scris_pret{
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-right: 5%;
+    color:teal;
+}
+
+.scris_pret:first-of-type{
+    margin-right: 0.5rem;
+}
+
+.flex-butoane{
+  width: 90%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content:space-around ;
+  bottom: 4%;
+}
+
+.red-button{
+  box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+	background-color:#fc8d83;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  font-size:17px;
+	font-weight:bold;
+	padding:9px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+
+.red-button:hover {
+	background:linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+	background-color:#e4685d;
+}
+.red-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+  @media (max-width: 1000px){
+  
+    nav .logo{
+      margin-left: 2rem;
+    }
+
+  
+  }
+  
+  @media (max-width: 768px){
+      .toggle-button{
+        display: flex;
+      }
+  
+      .navbar-links{
+        display: none;
+        width: 100%;
+      }
+       .navbar-links ul{
+         width: 100%;
+       }
+      .navbar{
+        flex-direction: column;
+      }
+  
+      .logo{
+        margin-top: 15px !important;
+      }
+  
+      .navbar-links ul{
+        flex-direction: column;
+        background-color: #86cd99;
+        margin-top: 10px;
+        align-items: center;
+  
+      }
+  
+      .navbar-links li{
+        text-align: center;
+        width: 100%;
+      }
+  
+      .navbar-links li:hover{
+        background-color: rgb(250, 250, 250);
+      }
+  
+      .navbar-links li a{
+        margin: 0.8rem 1rem;
+      }
+  
+    .navbar-links li:first-of-type{
+          margin-top: 1rem;
+        }
+  
+      .navbar-links li:last-of-type {
+        margin-bottom: 2rem;
+      }
+  
+      .navbar-links.active{
+         display: flex;
+       }
+  
+  
+      a.underline_effect, a.underline_effect::before, a.underline_effect:hover::before{
+        display: none;
+      }
+  
+  .menu_buttons{
+    width: 25%;
+  }
+
+  .mesaj{
+    font-size: 2.3rem;
+  }
+
+  .mesaj a{
+    font-size: 2.2rem;
+  }
+  
+}
+
+  @media (max-width: 500px){
+    *{font-size: 14px;}
+
+    .mesaj{
+        font-size: 2rem;
+      }
+    
+      .mesaj a{
+        font-size: 1.9rem;
+      }
+
+      .red-button{
+      
+        font-size:14px;
+        font-weight:bold;
+        padding:10px 16px;
+
+      }
+  }
+  
